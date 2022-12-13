@@ -28,15 +28,15 @@ int main()
     
     try
     {
-        do
-        {
-            std::cout << "Введите слово: ";
-            std::cin >> anyWord;
-
+    do
+    {
+        std::cout << "Введите слово: ";
+        std::cin >> anyWord;
+        
             wordLength = function(anyWord, forbiddenLength);
 
             std::cout << "Длина слова " << anyWord << " равна " << wordLength;
-            std::cout << std::endl << "-------------------------" << std::endl;
+        std::cout << std::endl << "-------------------------" << std::endl;
 
 
 
@@ -44,8 +44,8 @@ int main()
     }
     catch (...)
     {
-        std::cout << std::endl << "Вы ввели слово запретной длины! До свидания" << std::endl;
-    }
+    std::cout << std::endl << "Вы ввели слово запретной длины! До свидания" << std::endl;
+}   
     
 
     
