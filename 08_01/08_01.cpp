@@ -2,16 +2,18 @@
 
 #include <iostream>
 #include <string>
-//#include <exception>
 
 enum class FunctionResult 
 { forbiddenLengthZeroOrNegative = 1, forbiddenLengthEqualAnyWord };
 
 int function(std::string anyWord, int forbiddenLength)
 {
-    if (forbiddenLength == anyWord.length()) throw 2;
+    int badLength = 1;
 
-    return anyWord.length();
+    if (forbiddenLength == anyWord.length()) throw badLength;
+
+
+    { return anyWord.length(); }
 };
 
 int main()
@@ -28,25 +30,24 @@ int main()
     
     try
     {
-        do
-        {
-            std::cout << "Введите слово: ";
-            std::cin >> anyWord;
-
+    do
+    {
+        std::cout << "Введите слово: ";
+        std::cin >> anyWord;
+        
             wordLength = function(anyWord, forbiddenLength);
 
             std::cout << "Длина слова " << anyWord << " равна " << wordLength;
-            std::cout << std::endl << "-------------------------" << std::endl;
-
-
+        std::cout << std::endl << "-------------------------" << std::endl;
 
         } while (forbiddenLength != wordLength);
     }
-    catch (...)
+    catch (int badLength1)
+    {
+        std::cout << std::endl << "Неверная длина..." << std::endl;
+    }
+    catch (int badLength2)
     {
         std::cout << std::endl << "Вы ввели слово запретной длины! До свидания" << std::endl;
     }
-    
-
-    
 }   
