@@ -3,15 +3,11 @@
 #include <iostream>
 #include <string>
 
-enum class FunctionResult 
-{ forbiddenLengthZeroOrNegative = 1, forbiddenLengthEqualAnyWord };
-
 int function(std::string anyWord, int forbiddenLength)
 {
     int badLength = 1;
 
     if (forbiddenLength == anyWord.length()) throw badLength;
-
 
     { return anyWord.length(); }
 };
@@ -35,9 +31,9 @@ int main()
         std::cout << "Введите слово: ";
         std::cin >> anyWord;
         
-            wordLength = function(anyWord, forbiddenLength);
+        wordLength = function(anyWord, forbiddenLength);
 
-            std::cout << "Длина слова " << anyWord << " равна " << wordLength;
+        std::cout << "Длина слова " << anyWord << " равна " << wordLength;
         std::cout << std::endl << "-------------------------" << std::endl;
 
         } while (forbiddenLength != wordLength);
