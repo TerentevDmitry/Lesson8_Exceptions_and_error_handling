@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include <exception>
 #include "Function.h"
 
 int main()
@@ -47,8 +48,8 @@ int main()
 
         } while (forbiddenLength != wordLength);
     }
-    catch (int)
+    catch (const std::exception& ex)
     {
-        std::cout << std::endl << "Вы ввели слово запретной длины! До свидания" << std::endl;
+        std::cout << std::endl << ex.what() << std::endl;
     }
 }   
