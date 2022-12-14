@@ -3,13 +3,11 @@
 
 int function(std::string anyWord, int forbiddenLength)
 {
-    //int badLength = 1;
-
     if (forbiddenLength == anyWord.length())
     {
-        throw std::exception("Вы ввели слово запретной длины!До свидания");
+        throw std::exception("Вы ввели слово запретной длины!До свидания.");
     };
 
-    { return static_cast<int>(anyWord.length()); }
+    return static_cast<int>(anyWord.length());
 
 }
