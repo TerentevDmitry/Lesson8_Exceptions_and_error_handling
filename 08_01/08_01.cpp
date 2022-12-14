@@ -2,28 +2,39 @@
 
 #include <iostream>
 #include <string>
-
-int function(std::string anyWord, int forbiddenLength)
-{
-    int badLength = 1;
-
-    if (forbiddenLength == anyWord.length()) throw badLength;
-
-    { return anyWord.length(); }
-};
+#include "Function.h"
 
 int main()
 {
     setlocale(LC_ALL, "Russian");
+    system("chcp 1251");
 
     int wordLength = 111;
     int forbiddenLength = 0;
     std::string anyWord;
+    bool checkForbiddenLength = false;
     
-    std::cout << "Введите запретную длину: ";
-    std::cin >> forbiddenLength;
-    std::cout << std::endl << "-------------------------" << std::endl;
+    do
+    {
+        std::cout << "Введите запретную длину: ";
+        std::cin >> forbiddenLength;
+
+        if (forbiddenLength <= 0)
+        {
+            std::cout << "Неверная длина... Введите новую" << std::endl;
+        }
+        if (forbiddenLength > 0)
+        {
+            checkForbiddenLength = true;
+        }
+        else
+        {
+            std::cout << "Это не длина длина... Введите новую" << std::endl;
+        }
+    } while (!checkForbiddenLength);
     
+    std::cout << "-------------------------" << std::endl;
+
     try
     {
     do
@@ -33,16 +44,12 @@ int main()
         
         wordLength = function(anyWord, forbiddenLength);
 
-        std::cout << "Длина слова " << anyWord << " равна " << wordLength;
+        std::cout << "Длина слова \"" << anyWord << "\" равна " << wordLength;
         std::cout << std::endl << "-------------------------" << std::endl;
 
         } while (forbiddenLength != wordLength);
     }
-    catch (int badLength1)
-    {
-        std::cout << std::endl << "Неверная длина..." << std::endl;
-    }
-    catch (int badLength2)
+    catch (int)
     {
         std::cout << std::endl << "Вы ввели слово запретной длины! До свидания" << std::endl;
     }
