@@ -5,11 +5,6 @@
 
 Triangle::Triangle(int sideLengthA, int sideLengthB, int sideLengthC, int angleA, int angleB, int angleC)
 {
-	if ((angleA + angleB + angleC) != 180) 
-	{
-		throw MyException("Cумма углов не равна 180");
-	}
-	
 	nameOfFigure_ = "Треугольник";
 	sideLengthA_ = sideLengthA;
 	sideLengthB_ = sideLengthB;
@@ -17,4 +12,11 @@ Triangle::Triangle(int sideLengthA, int sideLengthB, int sideLengthC, int angleA
 	angleA_ = angleA;
 	angleB_ = angleB;
 	angleC_ = angleC;
+
+	if (checkValid())
+	{
+		throw MyException("Cумма углов не равна 180");
+	}
+
+
 }

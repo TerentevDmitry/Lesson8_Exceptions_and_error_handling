@@ -4,7 +4,7 @@
 #include "Figure.h"
 #include "PrintFigure.h"
 
-MyException::domain_error;
+//MyException::domain_error;
 //{
 //	/*char* MyException::getError();
 //	{

@@ -30,7 +30,7 @@ int main()
 	
 	try
 	{
-		Triangle Triangle1(10, 20, 30, 50, 60, 70);
+		Triangle Triangle1(10, 20, 30, 50, 60, 77);
 		printFigure(&Triangle1);
 		std::cout << "создан." << std::endl << std::endl;
 
