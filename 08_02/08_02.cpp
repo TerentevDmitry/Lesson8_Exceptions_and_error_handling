@@ -26,7 +26,7 @@ int main()
 	
 	try
 	{
-		Triangle Triangle1(10, 20, 30, 50, 60, 77);
+		Triangle Triangle1(10, 20, 30, 50, 60, 70);
 		printFigure(&Triangle1);
 		std::cout << "создан." << std::endl << std::endl;
 	}
@@ -38,7 +38,7 @@ int main()
 
 	try
 	{
-		RightTriangle rightTriangle1(10, 20, 30, 40, 50, 99);
+		RightTriangle rightTriangle1(10, 20, 30, 40, 60, 80);
 		printFigure(&rightTriangle1);
 		std::cout << "создан." << std::endl << std::endl;
 	}
@@ -50,22 +50,19 @@ int main()
 	
 	try
 	{
-		IsoscelesTriangle isoscelesTriangle1(11, 220, 11, 44, 555, 44);
+		IsoscelesTriangle isoscelesTriangle1(11, 11, 11, 50, 60, 70);
 		printFigure(&isoscelesTriangle1);
 		std::cout << "создан." << std::endl << std::endl;
 	}
 	catch (const std::exception& iT)
 	{
-		std::cerr << "Равнобедренный треугольник " << iT.what() << std::endl << "Причина: ";
+		std::cerr << "Равнобедренный треугольник не был создан. " << std::endl << "Причина: ";
 		
-		if (1)
-		{
-			std::cerr << "Стороны a и c не равны" << std::endl << std::endl;
-		}
-		else
-		{
-			std::cerr << "Углы A и C не равны" << std::endl << std::endl;
-		}
+		
+			std::cerr << iT.what() << std::endl << std::endl;
+		
+			//std::cerr << "Углы A и C не равны" << std::endl << std::endl;
+		
 	}
 
 
