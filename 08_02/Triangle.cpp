@@ -3,6 +3,7 @@
 #include "MyException.h"
 
 
+
 Triangle::Triangle(int sideLengthA, int sideLengthB, int sideLengthC, int angleA, int angleB, int angleC)
 {
 	nameOfFigure_ = "Треугольник";

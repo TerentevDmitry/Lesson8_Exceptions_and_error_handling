@@ -24,41 +24,54 @@ int main()
 	system("chcp 1251");
 	std::cout << std::endl;
 	
-	//Triangle Triangle1(10, 20, 30, 50, 60, 70);
-	//printFigure(&Triangle1);
-	
-	
 	try
 	{
 		Triangle Triangle1(10, 20, 30, 50, 60, 77);
 		printFigure(&Triangle1);
 		std::cout << "создан." << std::endl << std::endl;
-
 	}
-	catch (const MyException& Tr)
+	catch (const std::exception& Tr)
 	{
-		std::cout << "Треугольник не был создан. " << std::endl << "Причина: ";
+		std::cerr << "Треугольник не был создан. " << std::endl << "Причина: ";
 		std::cerr << Tr.what() << std::endl << std::endl;
-		//std::cout << "ex.what(Triangle)" << std::endl;
 	}
-	
+
 	try
 	{
 		RightTriangle rightTriangle1(10, 20, 30, 40, 50, 99);
 		printFigure(&rightTriangle1);
 		std::cout << "создан." << std::endl << std::endl;
 	}
-	catch (const MyException& rightT)
+	catch (const std::exception& rT)
 	{
-		std::cout << "Прямоугольный треугольник не был создан. " << std::endl << "Причина: ";
-		std::cerr << rightT.what() << std::endl << std::endl;
-		//std::cout << "ex.what(RightTriangle)" << std::endl;
+		std::cerr << "Прямоугольный треугольник не был создан. " << std::endl << "Причина: ";
+		std::cerr << rT.what() << std::endl << std::endl;
+	}
+	
+	try
+	{
+		IsoscelesTriangle isoscelesTriangle1(11, 220, 11, 44, 555, 44);
+		printFigure(&isoscelesTriangle1);
+		std::cout << "создан." << std::endl << std::endl;
+	}
+	catch (const std::exception& iT)
+	{
+		std::cerr << "Равнобедренный треугольник " << iT.what() << std::endl << "Причина: ";
+		
+		if (1)
+		{
+			std::cerr << "Стороны a и c не равны" << std::endl << std::endl;
+		}
+		else
+		{
+			std::cerr << "Углы A и C не равны" << std::endl << std::endl;
+		}
 	}
 
-	
 
-	//IsoscelesTriangle isoscelesTriangle1(11, 220, 330, 440);
-	//printFigure(&isoscelesTriangle1);
+
+
+
 
 	//EquilateralTriangle equilateralTriangle1(111);
 	//printFigure(&equilateralTriangle1);

@@ -6,8 +6,6 @@
 RightTriangle::RightTriangle(int sideLengthA, int sideLengthB, int sideLengthC, int angleA, int angleB, int angleC)
 	: Triangle(sideLengthA, sideLengthB, sideLengthC, angleA, angleB, angleC)
 {
-	
-	
 	Triangle::nameOfFigure_ = "Прямоугольный треугольник";
 
 	if (checkValid())
