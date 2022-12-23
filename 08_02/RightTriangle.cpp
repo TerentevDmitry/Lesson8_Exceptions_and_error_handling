@@ -8,7 +8,7 @@ RightTriangle::RightTriangle(int sideLengthA, int sideLengthB, int sideLengthC, 
 {
 	Triangle::nameOfFigure_ = "Прямоугольный треугольник";
 
-	if (checkValid())
+	if (angleC_ != 90)
 	{
 		throw MyException("Угол C не равен 90");
 	}

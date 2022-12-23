@@ -4,5 +4,5 @@
 class Rhomb : public Quadrilateral
 {
 public:
-    Rhomb(int sideLengthA, int angleA, int angleB);
+    Rhomb(int sideLengthA, int sideLengthB, int sideLengthC, int sideLengthD, int angleA, int angleB, int angleC, int angleD);
 };

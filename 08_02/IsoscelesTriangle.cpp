@@ -6,6 +6,11 @@ IsoscelesTriangle::IsoscelesTriangle(int sideLengthA, int sideLengthB, int sideL
 {
 	Triangle::nameOfFigure_ = "Равнобедренный треугольник";
 
+	if (sideLengthA_ != sideLengthC_ && angleA_ != angleC_)
+	{
+		throw MyException("Стороны a и c не равны и Углы A и C не равны");
+	}
+	
 	if (sideLengthA_ != sideLengthC_)
 	{
 		throw MyException("Стороны a и c не равны");

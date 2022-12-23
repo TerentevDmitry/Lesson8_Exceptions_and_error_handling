@@ -1,7 +1,6 @@
 #pragma once
 #include <string>
 
-
 class Figure
 {
 protected:
@@ -29,6 +28,4 @@ public:
 	int getAngleB();
 	int getAngleC();
 	int getAngleD();
-
-	virtual bool checkValid() const = 0; //проверка: фигура создана
 };
